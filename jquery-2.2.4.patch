@@ -1,0 +1,31 @@
+--- jquery-2.2.4_o.js	2020-04-14 21:37:20.000000000 +0200
++++ jquery-2.2.4.js	2020-04-14 21:22:24.000000000 +0200
+@@ -209,8 +209,9 @@
+ 				src = target[ name ];
+ 				copy = options[ name ];
+ 
++				// Prevent Object.prototype pollution
+ 				// Prevent never-ending loop
+-				if ( target === copy ) {
++				if ( name === "__proto__" || target === copy ) {
+ 					continue;
+ 				}
+ 
+@@ -5122,8 +5123,6 @@
+ 
+ 
+ var
+-	rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([\w:-]+)[^>]*)\/>/gi,
+-
+ 	// Support: IE 10-11, Edge 10240+
+ 	// In IE/Edge using regex groups here causes severe slowdowns.
+ 	// See https://connect.microsoft.com/IE/feedback/details/1736512/
+@@ -5322,7 +5321,7 @@
+ 
+ jQuery.extend( {
+ 	htmlPrefilter: function( html ) {
+-		return html.replace( rxhtmlTag, "<$1></$2>" );
++		return html;
+ 	},
+ 
+ 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {

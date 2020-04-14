@@ -1,0 +1,23 @@
+--- jquery-3.4.1_o.js	2020-04-14 21:35:49.000000000 +0200
++++ jquery-3.4.1.js	2020-04-14 21:22:40.000000000 +0200
+@@ -5771,11 +5771,6 @@
+ 
+ var
+ 
+-	/* eslint-disable max-len */
+-
+-	// See https://github.com/eslint/eslint/issues/3229
+-	rxhtmlTag = /<(?!area|br|col|embed|hr|img|input|link|meta|param)(([a-z][^\/\0>\x20\t\r\n\f]*)[^>]*)\/>/gi,
+-
+ 	/* eslint-enable */
+ 
+ 	// Support: IE <=10 - 11, Edge 12 - 13 only
+@@ -5976,7 +5971,7 @@
+ 
+ jQuery.extend( {
+ 	htmlPrefilter: function( html ) {
+-		return html.replace( rxhtmlTag, "<$1></$2>" );
++		return html;
+ 	},
+ 
+ 	clone: function( elem, dataAndEvents, deepDataAndEvents ) {
