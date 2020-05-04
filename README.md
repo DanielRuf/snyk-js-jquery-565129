@@ -1,4 +1,4 @@
-This repository contains the patches for [CVE-2020-11022](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11022) and [CVE-2020-11023](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11023) which affect all jQuery versions prior 3.5.0.
+This repository contains the patches for [CVE-2020-11022](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11022) and [CVE-2020-11023](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-11023) which affect all jQuery versions prior 3.5.0, including the patches from [DanielRuf/snyk-js-jquery-174006](https://github.com/DanielRuf/snyk-js-jquery-174006).
 
 These patches were generated with `diff -u original patched > patchfile`.
 
